@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('cars.urls')),
     path('api/', include('services.urls')),
+    path('api/auth/', include('authentication.urls')),
     path('api/token/', TokenObtainPairView.as_view()),
     path('api/token/refresh/', TokenRefreshView.as_view()),
 ]
