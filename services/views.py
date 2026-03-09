@@ -1,6 +1,8 @@
 from rest_framework import viewsets, permissions
 from .models import Service, Booking
 from .serializers import ServiceSerializer, BookingSerializer
+from .email import send_booking_confirmation
+
 
 class ServiceViewSet(viewsets.ModelViewSet):
     queryset = Service.objects.all()
@@ -21,4 +23,5 @@ class BookingViewSet(viewsets.ModelViewSet):
         return Booking.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        booking = serializer.save(user=self.request.user)
+        send_booking_confirmation(booking)
