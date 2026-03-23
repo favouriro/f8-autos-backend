@@ -139,10 +139,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:5173',
+    'https://f8-autos-frontend.onrender.com',
     os.getenv('FRONTEND_URL', ''),
 ]
 
