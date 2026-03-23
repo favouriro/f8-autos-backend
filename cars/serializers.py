@@ -3,12 +3,17 @@ from .models import Car
 
 class CarSerializer(serializers.ModelSerializer):
     image_url = serializers.SerializerMethodField()
+    
     class Meta:
         model = Car
         fields = '__all__'
 
     def get_image_url(self, obj):
         if obj.image:
-            return obj.image.url
+            url = obj.image.url
+            # Force https for production
+            if url.startswith('http://'):
+                url = url.replace('http://', 'https://', 1)
+            return url
         return None
     
