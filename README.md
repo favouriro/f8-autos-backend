@@ -141,3 +141,16 @@ The application is deployed on Render. See the environment variables section for
 | CLOUDINARY_CLOUD_NAME | Cloudinary cloud name |
 | CLOUDINARY_API_KEY | Cloudinary API key |
 | CLOUDINARY_API_SECRET | Cloudinary API secret |
+
+## AI Use Acknowledgement
+
+Generative AI was used throughout the development 
+of this project in the following ways:
+
+- **Planning** — helping scope the application features
+- **Guidance** — Explanations of Django and React concepts 
+  as they were implemented, including models, serializers, ViewSets, 
+  React hooks, and JWT authentication flow
+- **Debugging** — identifying and explaining errors such as CORS 
+  misconfigurations, dependency conflicts in requirements.txt etc
+- Refinement of README
